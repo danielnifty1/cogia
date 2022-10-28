@@ -276,7 +276,7 @@ Author URL: http://w3layouts.com
 
      $("#btnsubmit").html("Submit");
      $("#preview").html(data).fadeIn();
-     // $("#form")[0].reset(); 
+      $("#form")[0].reset(); 
     }
       },
      error: function(e) 

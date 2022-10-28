@@ -501,7 +501,7 @@ Author URL: http://w3layouts.com
     <!-- //move top -->
 
     <!-- common jquery plugin -->
-    <script src="assets/js/jquery-3.3.1.min.js"></script>
+    <script src="assets/js/jquersy-3.3.1.min.js"></script>
     <!-- //common jquery plugin -->
 
     <!-- /counter-->
