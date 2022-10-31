@@ -40,17 +40,33 @@
                 
                   <li class="sub-menu">
                     <a href="approved_test">
-                        <i class="fa fa-eye-slash"></i>
+                        <i class="fa fa-check"></i>
                         <span>Approved Tesimony</span>
                     </a>
                    
                 </li>
-                 <h6 style="padding: 9px 9px; background-color: #2a3f54; color: white; font-weight: bold;">COMPANY'S DETAILS </h6> 
+
+                 <li class="sub-menu">
+                    <a href="payments">
+                        <i class="fa fa-money"></i>
+                        <span>Payments</span>
+                    </a>
+                   
+                </li>
+                 <h6 style="padding: 9px 9px; background-color: #2a3f54; color: white; font-weight: bold;">ACTIVITY POSTS </h6> 
 
                 <li class="sub-menu">
-                    <a href="company">
-                        <i class="fa fa-info"></i>
-                        <span>EDIT DETAILS</span>
+                    <a href="trending">
+                        <i class="fa fa-plus"></i>
+                        <span>Add Event</span>
+                    </a>
+                   
+                </li>
+
+                 <li class="sub-menu">
+                    <a href="view_events">
+                        <i class="fa fa-eye"></i>
+                        <span>View Events</span>
                     </a>
                    
                 </li>

@@ -92,6 +92,92 @@ if(isset($_POST['adminname'])){
 
 }
 
+	 // SETTING PREVIOUS PROGRAM 
+ if(isset($_POST['positionid'])){
+	  $positionid = isset($_POST['positionid']) ? trim($_POST['positionid']) : '';
+	  $act = isset($_POST['act']) ? trim($_POST['act']) : '';
+
+	  if($act=="previous"){
+
+	 $current = "UPDATE events set status=0 where status !=2 and status!=3";
+
+		$currentrtn=mysqli_query($conn,$current);
+
+		if($currentrtn){
+
+			$currentb = "UPDATE events set status=1  where id='".$positionid."'";
+
+		$rtn=mysqli_query($conn,$currentb);
+
+		}
+	  }
+
+
+	 }
+
+
+// SETTING CURRENT PROGRAM 
+ if(isset($_POST['positionid'])){
+	  $positionid = isset($_POST['positionid']) ? trim($_POST['positionid']) : '';
+	  $act = isset($_POST['act']) ? trim($_POST['act']) : '';
+
+	  if($act=="current"){
+
+	 $current = "UPDATE events set status=0 where status !=1 and status!=3";
+
+		$currentrtn=mysqli_query($conn,$current);
+
+		if($currentrtn){
+
+			$currentb = "UPDATE events set status=2  where id='".$positionid."'";
+
+		$rtn=mysqli_query($conn,$currentb);
+
+		}
+	  }
+
+
+	 }
+
+	 // SETTING NEXT PROGRAM 
+ if(isset($_POST['positionid'])){
+	  $positionid = isset($_POST['positionid']) ? trim($_POST['positionid']) : '';
+	  $act = isset($_POST['act']) ? trim($_POST['act']) : '';
+
+	  if($act=="next"){
+
+	 $current = "UPDATE events set status=0 where status !=1 and status!=2";
+
+		$currentrtn=mysqli_query($conn,$current);
+
+		if($currentrtn){
+
+			$currentb = "UPDATE events set status=3  where id='".$positionid."'";
+
+		$rtn=mysqli_query($conn,$currentb);
+
+		}
+	  }
+
+
+	 }
+
+
+
+
+
+
+
+ if(isset($_POST['eventid'])){
+	echo  $eventid = isset($_POST['eventid']) ? trim($_POST['eventid']) : '';
+
+	 $delhisviewid = "UPDATE events set del=1 where id='".$eventid."'";
+
+		$delhisrstupviewid=mysqli_query($conn,$delhisviewid);
+
+	 }
+
+
 	 if(isset($_POST['testdeleteid'])){
 	 $testdeleteid = isset($_POST['testdeleteid']) ? trim($_POST['testdeleteid']) : '';
 
@@ -157,29 +243,6 @@ if(empty($enterlocation)){
 
 }
 
-// updateing track history
-
-
-if(isset($_POST['hisid'])){
-	 $hisid = isset($_POST['hisid']) ? trim($_POST['hisid']) : '';
-
-	$hisremark = isset($_POST['hisremark']) ? trim($_POST['hisremark']) : '';
-
-	$hisstatus = isset($_POST['hisstatus']) ? trim($_POST['hisstatus']) : '';
-
-	$hislocation = isset($_POST['hislocation']) ? trim($_POST['hislocation']) : '';
-
-	$hisdate = isset($_POST['hisdate']) ? trim($_POST['hisdate']) : '';
-	$histime = isset($_POST['histime']) ? trim($_POST['histime']) : '';
-
-
-$uphis="UPDATE history SET hisdate='$hisdate',hislocation='$hislocation',hisstatus='$hisstatus',hisremark='$hisremark',histime='$histime' where id = '".$hisid."'";
-
-$uprst=mysqli_query($conn,$uphis);
-if($uprst){
-	echo '<script>alert("updated")</script>';
-}
-}
 
 
 
@@ -187,151 +250,7 @@ if($uprst){
 
 
 
-if(isset($_POST['histracknum'])){
-	 $histracknum = isset($_POST['histracknum']) ? trim($_POST['histracknum']) : '';
 
-	$hisremark = isset($_POST['hisremark']) ? trim($_POST['hisremark']) : '';
-
-	$hisstatus = isset($_POST['hisstatus']) ? trim($_POST['hisstatus']) : '';
-
-	$hislocation = isset($_POST['hislocation']) ? trim($_POST['hislocation']) : '';
-
-	$hisdate = isset($_POST['hisdate']) ? trim($_POST['hisdate']) : '';
-	$histime = isset($_POST['histime']) ? trim($_POST['histime']) : '';
-
-
-
-	if(empty($hisdate)){
-		  echo'<script>hisdate.style.border="2px solid red";
-		 function history1(){
-            if(hisdate !==""){
-        
-                hisdate.style.border="2px solid green";
-
-            }
-            
-            else{
-                hisdate.style.border="2px solid red";
-                 // addadd.val("check ur loacation....");
-                addadd.innerHTML=HKHK;
-
-        
-            }
-        };</script>';
-
-	}elseif(empty($histime)){
-		  echo'<script>histime.style.border="2px solid red";
-		 function history5(){
-            if(histime !==""){
-        
-                histime.style.border="2px solid green";
-
-            }
-            
-            else{
-                histime.style.border="2px solid red";
-                 // addadd.val("check ur loacation....");
-                addadd.innerHTML=HKHK;
-
-        
-            }
-        };</script>';
-
-	}
-
-	elseif(empty($hislocation)){
-
-		  echo'<script>hislocation.style.border="2px solid red";
-
-	
-		   function history2(){
-            if(hislocation !==""){
-        
-                hislocation.style.border="2px solid green";
-
-            }
-            
-            else{
-                hislocation.style.border="2px solid red";
-                 addadd.val("check ur date....");
-        
-            }
-        };</script>';
-	}elseif(empty($hisstatus)){
-
-		  echo'<script>hisstatus.style.border="2px solid red";
-
-	
-		   function history3(){
-            if(hisstatus !==""){
-        
-                hisstatus.style.border="2px solid green";
-
-            }
-            
-            else{
-                hisstatus.style.border="2px solid red";
-                 addadd.val("check ur date....");
-        
-            }
-        };</script>';
-	}elseif(empty($hisremark)){
-
-		  echo'<script>hisremark.style.border="2px solid red";
-
-	
-		   function history4(){
-            if(hisremark !==""){
-        
-                hisremark.style.border="2px solid green";
-
-            }
-            
-            else{
-                hisremark.style.border="2px solid red";
-                 addadd.val("check ur date....");
-        
-            }
-        };</script>';
-	}else{
-
-
-	$enterhis="INSERT INTO history (hisdate,hislocation,hisstatus,hisremark,histracknum,histime) values('$hisdate','$hislocation','$hisstatus','$hisremark','$histracknum','$histime')";
-
-	$rst=mysqli_query($conn,$enterhis);
-
-	if($rst){
-		$upstatus = "UPDATE consignment set comment='$hisstatus' where tracknumber='".$histracknum."'";
-
-		$rstup=mysqli_query($conn,$upstatus);
-
-		if($rstup){
-
-					echo '<script> 
-			 $("#hisdate").val("");
-			 $("#histime").val("");
-			 $("#hislocation").val("");
-			 $("#hisstatus").val("");
-			 $("#hisremark").val("");
-			 $("#enterhistory").val("SAVED");
-		 ;</script>';
-		}
-
-	}
-
-
-}
-
-}
-
-if(isset($_POST['dashid'])){
-	 $dashid = isset($_POST['dashid']) ? trim($_POST['dashid']) : '';
-
-	 $delhis = "UPDATE history set status=0 where id='".$dashid."'";
-
-		$delhisrstup=mysqli_query($conn,$delhis);
-
-	 }
 
 
 
@@ -377,6 +296,17 @@ if(isset($_POST['dashid'])){
 
 	 }
 	 
+	 	 	 if(isset($_POST['featureid'])){
+
+
+	 $featureid = isset($_POST['featureid']) ? trim($_POST['featureid']) : '';
+	 $contactquery2 = "UPDATE features set status=1 where id='$featureid'";
+
+		$contactresult2=mysqli_query($conn,$contactquery2);
+
+
+	 }
+
 	 
 	 	 if(isset($_POST['deltrack'])){
 echo '<script>alert("sss")</script>';

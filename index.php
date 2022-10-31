@@ -1,3 +1,8 @@
+<?php 
+require "connection.php";
+                //=$_SESSION['adminname'];
+       require "middleware.php";                  
+                                    ?>
 <!--
 Author: W3layouts
 Author URL: http://w3layouts.com
@@ -122,6 +127,8 @@ Author URL: http://w3layouts.com
     <!-- home 4grids block -->
 
     <!-- home image with content block -->
+     <?php 
+                    if($currentreturn){ ?>
     <section class="w3l-servicesblock pt-lg-5 pt-4 pb-5 mb-lg-5" id="about">
         <div class="container pb-md-5 pb-4">
             <div class="row pb-xl-5 align-items-center">
@@ -129,7 +136,7 @@ Author URL: http://w3layouts.com
                     <div class="position-relative">
                         <a target="_blank" href="images/banner2.jpg">
                             
-                        <img src="images/banner2.jpg" alt="" class="img-fluid radius-image">
+                        <img src="admin/<?php echo $currentpimg ?>" alt="" class="img-fluid radius-image">
                         </a>
                     </div>
                     <div class="imginfo__box">
@@ -139,8 +146,8 @@ Author URL: http://w3layouts.com
                     </div>
                 </div>
                 <div class="col-xl-5 col-lg-6 offset-xl-1 mt-lg-0 mt-5 pt-lg-0 pt-5">
-                    <h3 class="title-style">Youth Convention 2022</h3>
-                    <p class="mt-4">Find comfort in God's word today, Jesus can help you in that challenge. Whatever your problem and challenges in Life is, trust God that if He gave you life today, He can also help you out of it all.
+                    <h3 class="title-style"><?php echo base64_decode($currentptitle) ?></h3>
+                    <p class="mt-4"><?php echo base64_decode($currentpmsg) ?>
                         </p>
                         <center>
                             
@@ -150,16 +157,28 @@ Author URL: http://w3layouts.com
                         </div>
                         </center>
                     <ul class="mt-4 list-style-lis pt-lg-1">
-                        <li><i class="fas fa-check-circle"></i>Youth Drama Ministration</li>
-                        <li><i class="fas fa-check-circle"></i>word,Music</li>
-                        <!-- <li><i class="fas fa-check-circle"></i></li> -->
-                        <li><i class="fas fa-check-circle"></i>Youth Excercise</li>
+                        <?php 
+                            $query = "SELECT* from features where status=0 and pid ='$currentid' order by id desc ";
+                                                $result = mysqli_query($conn, $query);//runs the connection to dsatabase and then run the query
+                                                $return = mysqli_num_rows($result);
+                                        // 
+                                if($return ){
+                                
+                                        while ($row = mysqli_fetch_assoc($result)){ 
+                                            $feature = $row['feature'];
+                                            ?>
+                        <li><i class="fas fa-check-circle"></i><?php echo base64_decode($feature) ?></li> 
+
+                   <?php }
+                   } ?>
+                        
                     </ul>
                     <!-- <a href="#" class="btn btn-style mt-5">Apply Now</a> -->
                 </div>
             </div>
         </div>
     </section>
+     <?php } ?>
     <!-- //home image with content block -->
 
     <!-- courses section -->
@@ -170,10 +189,12 @@ Author URL: http://w3layouts.com
                 <h3 class="title-style">Our God's Appointed Events</h3>
             </div>
             <div class="row justify-content-center">
+                 <?php 
+                    if($previousreturn){ ?>
                 <div class="col-lg-4 col-md-6">
                     <div class="coursecard-single">
                         <div class="grids5-info position-relative">
-                            <img src="images/past.jpg" alt="" class="img-fluid" />
+                            <img src="admin/<?php echo $previousimg ?>" alt="" class="img-fluid" />
                             <div class="meta-list">
                                 <a href="#">Previous</a>
                             </div>
@@ -182,10 +203,12 @@ Author URL: http://w3layouts.com
                             <div class="content-top mb-4 mt-3">
                                 <ul class="list-unstyled d-flex align-items-center justify-content-between">
                                     <li> <i class="fas fa-clock"></i> Date</li>
-                                    <li> <i class="fas fa-star"></i> Every Sunday</li>
+                                    <li>  <?php echo $previouspdate ?>
+                                    <p>Time: <?php echo $previousptime ?>
+                                    </li>
                                 </ul>
                             </div>
-                            <h4><a href="#">Preservation Services</a></h4>
+                            <h4><a href="#"><?php echo base64_decode($previousptitle) ?></a></h4>
                             <!-- <p>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p> -->
                             <div class="top-content-border d-flex align-items-center justify-content-between mt-4 pt-4">
                                 <h6></h6>
@@ -195,10 +218,14 @@ Author URL: http://w3layouts.com
                         </div>
                     </div>
                 </div>
+                  <?php } ?>
+
+                 <?php 
+                    if($currentreturn){ ?>
                 <div class="col-lg-4 col-md-6 mt-md-0 mt-4">
                     <div class="coursecard-single">
                         <div class="grids5-info position-relative">
-                            <img src="images/current.jpg" alt="" class="img-fluid" />
+                            <img src="admin/<?php echo $currentpimg ?>" alt="" class="img-fluid" />
                             <div class="meta-list">
                                 <a href="#" class="sec-2">Current</a>
                             </div>
@@ -206,11 +233,13 @@ Author URL: http://w3layouts.com
                         <div class="content-main-top">
                             <div class="content-top mb-4 mt-3">
                                 <ul class="list-unstyled d-flex align-items-center justify-content-between">
-                                    <li> <i class="fas fa-clock"></i> Date:</li>
-                                    <li> <i class="fas fa-"></i> Fri-2nd Sept 2022</li>
+                                     <li> <i class="fas fa-clock"></i> Date</li>
+                                    <li>  <?php echo $currentpdate ?>
+                                    <p>Time: <?php echo $currentptime ?>
+                                    </li>
                                 </ul>
                             </div>
-                            <h4><a href="#">The Energy Of God</a></h4>
+                            <h4><a href="#"><?php echo base64_decode($currentptitle) ?></a></h4>
                             <!-- <p>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p> -->
                             <div class="top-content-border d-flex align-items-center justify-content-between mt-4 pt-4">
                                 <!-- <h6>$36.00</h6> -->
@@ -220,10 +249,14 @@ Author URL: http://w3layouts.com
                         </div>
                     </div>
                 </div>
+                 <?php } ?>
+
+                <?php 
+                    if($nextreturn){ ?>
                 <div class="col-lg-4 col-md-6 mt-lg-0 mt-4">
                     <div class="coursecard-single">
                         <div class="grids5-info position-relative">
-                            <img src="images/next.jpg" alt="" class="img-fluid" />
+                            <img src="admin/<?php echo $nextpimg ?>" alt="" class="img-fluid" />
                             <div class="meta-list">
                                 <a href="#" class="sec-3">Next</a>
                             </div>
@@ -232,10 +265,12 @@ Author URL: http://w3layouts.com
                             <div class="content-top mb-4 mt-3">
                                 <ul class="list-unstyled d-flex align-items-center justify-content-between">
                                     <li> <i class="fas fa-clock"></i> Date</li>
-                                    <li> <i class="fas fa-star"></i> Every Wednesdays</li>
+                                    <li>  <?php echo $nextpdate ?>
+                                    <p>Time: <?php echo $nextptime ?>
+                                    </li>
                                 </ul>
                             </div>
-                            <h4><a href="#">Prophetic Deliverance Service    </a></h4>
+                            <h4><a href="#"><?php echo base64_decode($nextptitle) ?></a></h4>
                             <!-- <p>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p> -->
                             <div class="top-content-border d-flex align-items-center justify-content-between mt-4 pt-4">
                                 <!-- <h6>$30.00</h6> -->
@@ -245,11 +280,12 @@ Author URL: http://w3layouts.com
                         </div>
                     </div>
                 </div>
+                <?php } ?>
             </div>
-            <div class="text-center mt-sm-5 mt-4 pt-sm-0 pt-1">
+            <!-- <div class="text-center mt-sm-5 mt-4 pt-sm-0 pt-1">
                 <a class="btn btn-style btn-style-secondary mt-sm-3" href="#">
                     MORE</a>
-            </div>
+            </div> -->
         </div>
     </div>
     <!-- //courses section -->

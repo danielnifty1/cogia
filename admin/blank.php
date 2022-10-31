@@ -6,7 +6,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 -->
 <!DOCTYPE html>
 <head>
- <title>United Offshore Express Courier</title>
+ <title>City of God Admin</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="keywords" content="DARMA COURIER SERVICES" />
@@ -49,7 +49,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
  <!-- footer -->
 		  <div class="footer">
 			<div class="wthree-copyright">
-			 <p>© 2022  All rights reserved <a href="https://seaportmover.com">seaportmover</a></p>
+			<p>© 2022  All rights reserved <a href="https://cogiaworld.org">City Of God</a></p>
 			</div>
 		  </div>
   <!-- / footer -->

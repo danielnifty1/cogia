@@ -61,6 +61,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <link rel="stylesheet" href="web/css/morris.css" type="text/css"/>
 <!-- calendar -->
 <link rel="stylesheet" href="web/css/monthly.css">
+<link rel="shortcut icon" type="image/x-icon" href="../assets/images/mercy.png" />
 <!-- //calendar -->
 <!-- //font-awesome icons -->
 <script src="web/js/jquery2.0.3.min.js"></script>

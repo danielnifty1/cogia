@@ -104,7 +104,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			<br>
 			<br>
 
-			<h4 style="text-align: center;">All Registered Member (<?php echo $tmember ?>)</h4>		
+			<h4 style="text-align: center;">All Payments</h4>		
 			<div class="col-md-12 col-lg-12 col-sm-12 col-xs-12 col-md-push-0">
 			<div class="table-responsive">
 				<style type="text/css">
@@ -116,46 +116,48 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					<tr>
 						<th>Member ID</th>
 						<th>Fullname</th>
-						<th>Phone(work)</th>
-						<th>phone(Home)</th>
-						<th>E-mail</th>
-						<th>D.O.B</th>
-						<th>Residential Add.</th>
-						<th>VIEW MORE</th>
-						<th>Delete</th>	
+						<th>Email</th>
+						<th>Paid For</th>
+						<th>Amount</th>
+						<th>Date</th>
+						<th>Ref</th>
+						<th>ID</th>	
 					</tr>
 
-							<?php 
-		       								//=$_SESSION['adminname'];
-									$query = "SELECT* from members where status=1 order by id desc LIMIT ".$page_first_result.','.$result_per_page;
-										$result = mysqli_query($conn, $query);//runs the connection to dsatabase and then run the query
-										$return = mysqli_num_rows($result);
-								// 
-						if($return ){
+					<?php 
+       			//=$_SESSION['adminname'];
+							$query = "SELECT* from payment where status=0 order by id desc LIMIT ".$page_first_result.','.$result_per_page;
+								$result = mysqli_query($conn, $query);//runs the connection to dsatabase and then run the query
+								$return = mysqli_num_rows($result);
+						// 
+				if($return ){
 						
 								while ($row = mysqli_fetch_assoc($result)){ 
-										$fname = $row["fname"];
-										$onames = $row["onames"];
-										$phonehome = $row["phonehome"];
-										$phonework = $row["phonework"];
+										$name = $row["name"];
+										$amount = $row["amount"];
+										 
 										$email = $row["email"];
 										$id = $row["id"];
-										$dob = $row["dob"];
-										$resmailing = $row["resmailing"];
+										$transid = $row["transid"];
+										$ref = $row["ref"];
+										$transdate = $row["transdate"];
+										 
+										$paidfor = $row["paidfor"];
 										$memberid = $row["memberid"];				
 									?>
 									<tr id="show<?php echo $id ?>">
 										<td><?php echo $memberid ?></td>
-										<td><?php echo $fname." ".$onames ?></td>
-										<td><?php echo $phonework ?></td>
-										<td><?php echo $phonehome ?></td>
+										<td><?php echo $name  ?></td>
 										<td><?php echo $email ?></td>
-										<td><?php echo $dob ?></td>
-										<td><?php echo $resmailing ?></td>
+										<td><?php echo $paidfor ?></td>
+										<td>₦<?php echo number_format($amount) ?></td>
+										<td><?php echo $transdate ?></td>
+										<td><?php echo $ref ?></td>
+										<td><?php echo $transid ?></td>
 
-										<td><a href="moreview?id=<?php echo $id ?>" class="btn btn-small btn-info">More Details</a></td>		
+										<!-- <td><a href="moreview?id=<?php echo $id ?>" class="btn btn-small btn-info">More Details</a></td>		
 										<td>
-								  	<button id="delview<?php echo $id ?>">DELETE</button></td>
+								  	<button id="delview<?php echo $id ?>">DELETE</button></td> -->
 										
 										
 									</tr>
