@@ -68,7 +68,7 @@ if(isset($_POST['adminname'])){
 					$_SESSION['shore'] = $row['adminname'];				
 					if(isset($_SESSION['shore'])){
 
-    echo'<script>location.replace("adview")</script>';
+    echo'<script>location.replace("members")</script>';
 		}
 
 			}

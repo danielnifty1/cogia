@@ -106,7 +106,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
 			<h4 style="text-align: center;">All Registered Member (<?php echo $tmember ?>)</h4>		
 			<div class="col-md-12 col-lg-12 col-sm-12 col-xs-12 col-md-push-0">
-			<div class="table-responsive">
+				<div class="table-responsive">
 				<style type="text/css">
 					th,td{
 						color: black !important;
@@ -210,7 +210,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 									}?>
 								</table>
 							</div>
-						</div>	
+			</div>	
 						<div class="col-md-12 col-md-push-6 ">
 				<?php 
 
@@ -219,7 +219,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					} ?>
 				</div>;
 
-		</div>
+			</div>
 	
 
 			

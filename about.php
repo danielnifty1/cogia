@@ -1,3 +1,9 @@
+<?php 
+require "connection.php";
+                //=$_SESSION['adminname'];
+       require "middleware.php";                  
+                                    ?>
+
 <!--
 Author: W3layouts
 Author URL: http://w3layouts.com
@@ -17,6 +23,10 @@ Author URL: http://w3layouts.com
     <link rel="stylesheet" href="assets/css/style-starter.css">
     <link rel="stylesheet" href="web/css/font-awesome.css">
        <link rel="shortcut icon" type="image/x-icon" href="assets/images/mercy.png" />
+              <link href="css/owl.carousel.css" rel="stylesheet">
+                    <script src="js/jquery-1.11.1.min.js"></script>
+                    <script src="js/owl.carousel.js"></script>
+
 </head>
 
 
@@ -147,107 +157,40 @@ Author URL: http://w3layouts.com
     </section>
     <!-- //stats block -->
 
+  
     <!-- testimonials block -->
-   <section class="w3l-index4 py-5" id="testimonials">
-        <div class="container py-md-5 py-4">
-            <div class="content-slider text-center">
-                <div class="clients-slider">
-                    <div class="mask">
-                        <ul>
-                            <li class="anim1">
-                                <img src="assets/images/testi1.jpg" class="img-fluid rounded-circle"
-                                    alt="client image" />
-                                <blockquote class="quote"><q>Duis aute irure dolor in reprehenderit in voluptate
-                                        velit esse
-                                        cillum dolore eu. Excepteur sint occaecat cupidatat
-                                        non proident, sunt in culpa qui officia deserunt mollit anim id est
-                                        laborum.
-                                    </q> </blockquote>
-                                <div class="source">- Mario Spe</div>
-                            </li>
+ <?php
 
-                            <li class="anim2">
-                                <img src="assets/images/testi2.jpg" class="img-fluid rounded-circle"
-                                    alt="client image" />
-                                <blockquote class="quote"><q>Sed ut perspiciatis unde omnis iste natus error sit
-                                        voluptatem
-                                        accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab
-                                        illo
-                                        inventore.
-                                    </q> </blockquote>
-                                <div class="source">- Petey Cru</div>
-                            </li>
-                            <li class="anim3">
-                                <img src="assets/images/testi3.jpg" class="img-fluid rounded-circle "
-                                    alt="client image" />
-                                <blockquote class="quote"><q>Lorem ipsum dolor sit amet, consectetur adipiscing
-                                        elit, sed do
-                                        eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-                                        veniam,
-                                        quis nostrud exercitation.
-                                    </q> </blockquote>
-                                <div class="source">- Anna Sth</div>
-                            </li>
-                            <li class="anim4">
-                                <img src="assets/images/testi1.jpg" class="img-fluid rounded-circle"
-                                    alt="client image" />
-                                <blockquote class="quote"><q>Duis aute irure dolor in reprehenderit in voluptate
-                                        velit esse
-                                        cillum dolore eu. Excepteur sint occaecat cupidatat
-                                        non proident, sunt in culpa qui officia deserunt mollit anim id est
-                                        laborum.
-                                    </q> </blockquote>
-                                <div class="source">- Gail For</div>
-                            </li>
-                            <li class="anim5">
-                                <img src="assets/images/testi2.jpg" class="img-fluid rounded-circle"
-                                    alt="client image" />
-                                <blockquote class="quote"><q>Lorem ipsum dolor sit amet, consectetur adipiscing
-                                        elit, sed do
-                                        eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-                                        veniam,
-                                        quis nostrud exercitation.
-                                    </q> </blockquote>
-                                <div class="source">- Boye Fra</div>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+  // require "testimony.php"
+
+   ?>
     <!-- //testimonials block -->
-   <section class="w3l-call-to-action-6">
-        <div class="container py-md-5 py-sm-4 py-5">
-            <div class="d-lg-flex align-items-center justify-content-between">
-                <div class="left-content-call">
-                    <h3 class="title-big">Have a testimony to share?</h3>
-                    <p class="text-white mt-1">Jesus Answers!</p>
-                </div>
-                <div class="right-content-call mt-lg-0 mt-4">
-                    <ul class="buttons">
-                        <li class="phone-sec me-lg-4"><i class="fa fa-speaker-deck"></i>
-                            <!-- <a class="call-style-w3" href="tel:+234 909657467657">+234 909657467657</a> -->
-                        </li>
-                        <li><a href="#" class="btn btn-style btn-style-2 mt-lg-0 mt-3">Click to Testify</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
     <!-- team block -->
+                         <script>
+                            $(document).ready(function() {
+                                $("#owl-demo").owlCarousel({
+                                    items :2,
+                                    lazyLoad : true,
+                                    autoPlay : true,
+                                    autoplayTimeout: 10,
+                                    autoplaySpeed: 10,
+                                    pagination : true,
+                                    nav:true,
+                                });
+                            });
+                        </script>
+
     <section class="w3l-team-13 py-5" id="team">
         <div class="container py-md-5 py-4">
             <div class="title-main text-center mx-auto mb-md-5 mb-4" style="max-width:500px;">
                 <p class="text-uppercase">Our Team</p>
                 <h3 class="title-style">Meet Our Pastors</h3>
             </div>
-            <div class="row text-center left-side">
-                <div class="col-lg-3 col-6">
-                    <div class="image-one">
+            <div class="row text-center left-side owl-carousel" id="owl-demo">
+                <div class="col-lg-12 col-md-12">
+                    <div class="image-one item">
                         <a href="#team">
-                            <img src="images/pa.jpg" class="arrow-png img-responsive" />
+                            <img src="images/pa.jpg" class="arrow-png img-responsive lazyOwl" />
                             <h4>Emma Watson</h4>
                             <div class="buttons-teams2 mt-2">
                                 <a href="#team"><i class="fab fa-facebook-square"></i></a>
@@ -257,10 +200,10 @@ Author URL: http://w3layouts.com
                         </a>
                     </div>
                 </div>
-                <div class="col-lg-3 col-6">
-                    <div class="image-one">
+                <div class="col-lg-12 col-md-12">
+                    <div class="image-one item">
                         <a href="#team">
-                            <img src="images/p2.jpg" class="arrow-png img-responsive">
+                            <img src="images/p2.jpg" class="arrow-png img-responsive lazyOwl">
                             <h4>Enrique Lal</h4>
                             <div class="buttons-teams2 mt-2">
                                 <a href="#team"><i class="fab fa-facebook-square"></i></a>
@@ -270,10 +213,10 @@ Author URL: http://w3layouts.com
                         </a>
                     </div>
                 </div>
-                <div class="col-lg-3 col-6 mt-lg-0 mt-4">
-                    <div class="image-one">
+                <div class="col-lg-12 col-md-12">
+                    <div class="image-one item">
                         <a href="#team">
-                            <img src="images/p3.jpg" class="arrow-png img-responsive">
+                            <img src="images/p3.jpg" class="arrow-png img-responsive lazyOwl">
                             <h4>Smith Ker</h4>
                             <div class="buttons-teams2 mt-2">
                                 <a href="#team"><i class="fab fa-facebook-square"></i></a>
@@ -283,10 +226,10 @@ Author URL: http://w3layouts.com
                         </a>
                     </div>
                 </div>
-                <div class="col-lg-3 col-6 mt-lg-0 mt-4">
-                    <div class="image-one">
+                <div class="col-lg-12 col-md-12 ">
+                    <div class="image-one item">
                         <a href="#team">
-                            <img src="images/p4.jpg" class="arrow-png img-responsive">
+                            <img src="images/p4.jpg" class="arrow-png img-responsive lazyOwl">
                             <h4>Forkler Lee</h4>
                             <div class="buttons-teams2 mt-2">
                                 <a href="#team"><i class="fab fa-facebook-square"></i></a>
@@ -336,7 +279,7 @@ Author URL: http://w3layouts.com
     <!-- //move top -->
 
     <!-- common jquery plugin -->
-    <script src="assets/js/jquery-3.3.1.min.js"></script>
+  <!--   <script src="assets/js/jquery-3.3.1.min.js"></script> -->
     <!-- //common jquery plugin -->
 
     <!-- counter-->

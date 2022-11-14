@@ -192,4 +192,140 @@ if(isset($_POST['feature'])){
 
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+// ADDING OFFERRING
+
+if(isset($_POST['offerrings'])){
+ 
+ $offerrings=$_POST['offerrings'];
+ 
+
+ $title=base64_encode($offerrings);
+ 
+ $check= "SELECT* FROM offering where title= '$title' and status=0";
+$rst = mysqli_query($conn,$check);
+$rtn=mysqli_num_rows($rst);
+if($rtn){
+	 echo'<script>
+		  msgtext.innerHTML="Offering title already existing";
+		   
+		  offerrings.style.border="2px solid red";
+		 function offerrings1(){
+            if(offerrings !==""){
+        
+                offerrings.style.border="2px solid green";
+                  msgtext.innerHTML="";
+
+            }
+            
+            else{
+                offerrings.style.border="2px solid red";
+                 // addadd.val("check ur loacation....");
+                addadd.innerHTML=HKHK;
+
+        
+            }
+        };</script>';
+
+?>
+		<script src="web/js/jquery2.0.3.min.js"></script>
+			<?php require "offdata.php" ?>
+ 
+<?php
+}else{
+		
+
+$input="INSERT INTO offering (title) values('$title')";
+$rst=mysqli_query($conn,$input);
+ if($rst){
+
+
+echo'<script>
+		  msgtext.innerHTML=" ";
+		   offerrings.style.border="2px solid green";
+		  </script>'; ?>
+
+ 			<script src="web/js/jquery2.0.3.min.js"></script>
+ 	 	<?php require "offdata.php" ?>	
+
+
+
+ <?php }
+
+}
+}
+
+
+// DELETING OFFER
+
+if(isset($_POST['offerringid'])){
+ 
+ $offerringid=$_POST['offerringid'];
+
+ $upoff="UPDATE offering set status=1 where id ='".$offerringid."'";
+ $mrst=mysqli_query($conn,$upoff);
+
+
+ }
+
+
+
+ // updating offering
+
+
+
+ if(isset($_POST['updateofferringid'])){
+ 
+ $updateofferringid=$_POST['updateofferringid'];
+ $updatetitle=$_POST['updatetitle'];
+
+$title=base64_encode($updatetitle);
+ $check= "SELECT* FROM offering where title= '$title' and status=0";
+$rst = mysqli_query($conn,$check);
+$rtn=mysqli_num_rows($rst);
+
+if($rtn){ ?>
+			<script>
+				alert("Offering title already existing")
+		  			// updrst<?php echo $updateofferringid ?>.innerHTML="";
+		    	// updrst<?php echo $updateofferringid ?>.style.color="red";
+		  </script>
+
+<?php }else{
+	 $upoff="UPDATE offering set title='$title' where id ='".$updateofferringid."'";
+ $mrst=mysqli_query($conn,$upoff); ?>
+
+<script>
+				alert("Offering Successfully updated")
+		  // updrst<?php echo $updateofferringid ?>.innerHTML="Offering updated";
+		  //   updrst<?php echo $updateofferringid ?>.style.color="green";
+		  </script>
+ 
+		 
+
+
+<?php }
+
+
+
+
+
+
+
+
+
+
+
+ }
 ?>

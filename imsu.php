@@ -177,22 +177,21 @@ $upr=mysqli_query($conn,$up);
 		                                  		<div class="col-sm-12 col-xs-12 col-lg-12 col-md-12">
 		                                          <label for="email" class="form-label">Payment Type </label>
 		                                          <select class="form-control" name="paytype" id="paytype" required >
-		                                          		<option value="">Select Payment</option>
-
-
-                                                        <?php
-                                                            $query = "SELECT* from offering where status=0 order by id desc";
-                                                            $result = mysqli_query($conn, $query);//runs the connection to dsatabase and then run the query
-                                                            $return = mysqli_num_rows($result);
-                                                                            // 
-                                                            if($return ){
-                                                        
-                                                                while ($row = mysqli_fetch_assoc($result)){ 
-                                                                    $title = $row["title"]; ?>
-
-		                                          					<option value="<?php echo base64_decode($title) ?>"><?php echo base64_decode($title) ?></option>
-
-                                                                <?php } } ?>
+		                                          					<option value="">Select Payment</option>
+		                                          					<option value="Dormitory Development Donation">Dormitory Development Donation</option>
+                                        							<option value="Convention Offering">Convention Offering</option>
+                                        							<option value="Thanksgiving Offering">Thanksgiving Offering</option>
+                                        							<option value="New Auditorium Building">New Auditorium Building</option>
+                                        							<option value="Children Auditorium Donations">Children Auditorium Donations</option>
+                                        							<option value="Holy Ghost Service">Holy Ghost Service</option>
+                                        							<option value="Online Tithes">Online Tithes</option>
+                                        							<option value="IT Donations">IT Donations</option>
+                                        							
+                                        							<option value="FirstFruit">FirstFruit</option>
+                                        							<option value="Support African Mission">Support African Mission</option>
+                                        							<option value="Holyghost Congress Offering">Holyghost Congress Offering</option>
+                                        							<option value="Gift To Daddy GO">Gift To Daddy GO</option>
+                                        							<option value="FloodGates Of Heaven Seed">FloodGates Of Heaven Seed</option>	
 		                                          </select>
 		                                          <div class="invalid-feedback">
 		                                            Please enter a valid email address for shipping updates.
@@ -201,7 +200,7 @@ $upr=mysqli_query($conn,$up);
 
 		                                         <div class="col-sm-12 col-xs-12 col-lg-12 col-md-12">
 		                                          <label for="email" class="form-label">Amount (₦) </label>
-		                                          <input type="number" class="form-control" name="payamount" id="payamount" placeholder="₦5,000" required>
+		                                          <input type="number" class="form-control" name="payamount" id="payamount" placeholder="5000" required>
 		                                          <div class="invalid-feedback">
 		                                            Please enter a valid email address for shipping updates.
 		                                          </div>

@@ -70,12 +70,20 @@
                     </a>
                    
                 </li>
-                 <h6 style="padding: 9px 9px; background-color: #2a3f54; color: white; font-weight: bold;">ADMINS </h6> 
+
+                 <li class="sub-menu">
+                    <a href="offerrings">
+                        <i class="fa fa-moneys">$</i>
+                        <span>Offerings</span>
+                    </a>
+                   
+                </li>
+                 <h6 style="padding: 9px 9px; background-color: #2a3f54; color: white; font-weight: bold;">PASTORS </h6> 
 
                 <li class="sub-menu">
-                    <a href="addadmin">
-                        <i class="fa fa-user"></i>
-                        <span>CREATE ADMIN </span>
+                    <a href="addpastor">
+                        <i class="fa fa-plus"></i>
+                        <span>Add Pastor </span>
                     </a>
                     
                 </li>

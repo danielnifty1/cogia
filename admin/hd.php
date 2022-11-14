@@ -17,7 +17,7 @@
         <li id="header_inbox_bar" class="dropdown">
             <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                 <i class="fa fa-envelope-o"></i>
-                <span class="badge bg-important"><?php echo $checker ?></span>
+              <!--   <span class="badge bg-important"><?php echo $checker ?></span> -->
             </a>
             <ul class="dropdown-menu extended inbox">
                 <li>
