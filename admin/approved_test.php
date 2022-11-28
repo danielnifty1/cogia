@@ -104,7 +104,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			<br>
 			<br>
 
-			<h4 style="text-align: center;">All Member Testimony (<?php echo $tmember ?>)</h4>		
+			<h4 style="text-align: center;">All Approved Testimonies (<?php echo $tmember ?>)</h4>		
 			<div class="col-md-12 col-sm-12 col-xs-12 col-lg-12 col-md-push-0">
 			<div class="table-responsive">
 				<style type="text/css">
@@ -164,7 +164,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 										
 										
 									</tr>
-									<?php require 'modals.php' ?>;
+									<?php require 'modals.php' ?>
 				<span id="rst"></span>
 				<script type="text/javascript">
 
@@ -260,13 +260,16 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 								</table>
 							</div>
 						</div>	
-						<div class="col-md-12 col-md-push-6 ">
+						
+		</div>
+		<div class="row">
+			<div class="col-md-12 col-md-push-6 ">
 				<?php 
 
 				for ($page=1; $page <=$number_of_pages ; $page++) { 
-						echo ' <a class="btn-sm btn-info btn" href="adview.php?page='.$page.'">'.$page.'</a> ';
+						echo ' <a class="btn-sm btn-info btn" href="approve_test?page='.$page.'">'.$page.'</a> ';
 					} ?>
-				</div>;
+				</div>
 
 		</div>
 	

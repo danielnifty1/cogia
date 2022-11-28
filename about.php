@@ -88,51 +88,35 @@ Author URL: http://w3layouts.com
             <div class="row text-cendter pt-4 mb-6">
                 <div class="col-md-4 col-1 offset-4 mb-4" >
                     <ul class="nav nav-tabs" role="tablist">
-                        <li class="nav-item">
-                          <a class="nav-link active" data-bs-toggle="tab" href="#home">Our Beliefs</a>
-                        </li>
-                        <li class="nav-item">
-                          <a class="nav-link" data-bs-toggle="tab" href="#menu1">Our Mission</a>
-                        </li>
-                        <li class="nav-item">
-                          <a class="nav-link" data-bs-toggle="tab" href="#menu2">Our Vision</a>
-                        </li>
+                       <!--  <li class="nav-item">
+                          <a class="nav-link active text-center" data-bs-toggle="tab" href="#home"></a>
+                        </li> -->
+                      
                     </ul>
 
                     </div>
                       <!-- Tab panes -->
                       <div class="tab-content ">
                         <div id="home" class="container tab-pane active"><br>
-                          <h3 class=text-center>Our Beliefs</h3>
-                          <p style="text-align:left;color: orange;">THE HOLY BIBLE </p>
-                          <span> Only the Bible, is the authoritative Word of God. It alone is the final authority in determining all doctrinal truths. In its original writing, it is inspired, infallible and inerrant (II Timothy 3:16; II Peter 1:20-21; Proverbs 30:5; Romans 16:25-26). </span>
+                          <h3 class="text-center mb-4" style="color:#0825c3">Our Vision</h3>
+                           
+                          <p class=text-center>Preparing Man For Heaven</p>
 
                           <br>
-                          <br>
+               
+                           
+                          <p class=text-center>Raising People Of Fire That Will Carry The Presence, Glory and Power Of God into the Systems and For The Second Coming Of Jesus Christ</p>
 
-                          <p style="text-align:left;color: orange;">TRINITY </p>
-                          <span> There is one God, eternally existent in three persons: Father, Son and Holy Spirit. These three are coequal and co-eternal (I John 5:7; Genesis 1:26; Matthew 3:16-17, 28:19; Luke 1:35; Isaiah 9:6; Hebrews 3:7-11). </span>
+                           
 
-                          <br>
-                          <br>
 
-                          <p style="text-align:left;color: orange;">JESUS CHRIST </p>
-                          <span> Jesus Christ is God the Son, the second person of the Trinity. On earth, Jesus was 100% God and 100% man. He is the only man ever to have lived a sinless life. He was born of a virgin, lived a sinless life, performed miracles, died on the cross for mankind and thus, atoned for our sins through the shedding of His blood. He rose from the dead on the third day according to the Scriptures, ascended to the right hand of the Father, and will return again in power and glory. (John 1:1,14, 20:28; I Timothy 3:16; Isaiah 9:6; Philippians 2:5-6; I Timothy 2:5). </span>
-
-                          <br>
-                          <br>
-
-                          <p style="text-align:left;color: orange;">SALVATION </p>
-                          <span> We are saved by grace through faith in Jesus Christ: His death, burial, and resurrection. Salvation is a gift from God, not a result of our good works or of any human efforts (Ephesians 2:8-9; Galatians 2:16, 3:8; Titus 3:5; Romans 10:9-10; Acts 16:31; Hebrews 9:22). </span>
-
-                          <br>
-                          <br>
-                          <p style="text-align:left;color: orange;">JESUS’ BLOOD </p>
-                          <span> The Blood that Jesus Christ shed on the Cross of Calvary was sinless and is 100% sufficient to cleanse mankind of all sin. Jesus allowed Himself to be punished for both our sinfulness and our sins, enabling all those who believe to be free from the penalty of sin, which is death (I John 1:7; Revelation 1:5, 5:9; Colossians 1:20; Romans 3:10-12, 23, 5:9; John 1:29).</span>
-
-                          <br>
-                          <br>
+                            <h3 class="text-center mt-5 mb-4" style="color:#0825c3">Our Mission</h3>
+                          <p class=text-center>To Reach The World With The Supernatural Power Of God By The World</p>
                           
+
+                           <h3 class="text-center mb-4 mt-5" style="color:#0825c3">Our Mandate</h3>
+                           
+                          <p class=text-center>Raising Kings and Queens for the kingdom</p>
                           
                         </div>
 
@@ -142,11 +126,11 @@ Author URL: http://w3layouts.com
 
                         <!-- OUR MISSION -->
                         <div id="menu1" class="container tab-pane fade"><br>
-                          <h3>Our Mission</h3>
-                          <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                          <h3 class=text-center>Our Mission</h3>
+                          <p>To Reach The World With The Supernatural Power Of God By The World</p>
                         </div>
                         <div id="menu2" class="container tab-pane fade"><br>
-                          <h3>Our Vision</h3>
+                          <h3 class=text-center>Our Vision</h3>
                           <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
                         </div>
                       </div>
@@ -188,57 +172,53 @@ Author URL: http://w3layouts.com
             </div>
             <div class="row text-center left-side owl-carousel" id="owl-demo">
                 <div class="col-lg-12 col-md-12">
+
+                    <?php 
+                                            //=$_SESSION['adminname'];
+                                    $query = "SELECT* from pastors where status=0";
+                                        $result = mysqli_query($conn, $query);
+
+                                        //runs the connection to database and then run the query
+
+
+                                        $return = mysqli_num_rows($result);
+
+                                // 
+                        if($return ){
+                        
+                                while ($row = mysqli_fetch_assoc($result)){ 
+                                        $fname = $row["name"];
+                                     
+                                        $phone = $row["phone"];
+                                 
+                                        $email = $row["email"];
+                                        $id = $row["id"];
+                                        $fb = $row["fb"];
+                                        $instagram = $row["instagram"];
+                                        $twitter = $row["twitter"];             
+                                        $img = $row["img"];             
+                                        $position = $row["position"];               
+                                            
+                                    ?>
+
                     <div class="image-one item">
                         <a href="#team">
-                            <img src="images/pa.jpg" class="arrow-png img-responsive lazyOwl" />
-                            <h4>Emma Watson</h4>
+                            <img src="admin/<?php echo $img ?> " class="arrow-png img-responsive lazyOwl" />
+                            <h4 style="color:white"><?php echo base64_decode($fname) ?></h4>
                             <div class="buttons-teams2 mt-2">
-                                <a href="#team"><i class="fab fa-facebook-square"></i></a>
-                                <a href="#team"><i class="fab fa-twitter-square"></i></a>
-                                <a href="#team"><i class="fab fa-google-plus-square"></i></a>
+                                <a href="<?php echo $fb ?>"><i class="fab fa-facebook-square"></i></a>
+                                <a href="<?php echo $twitter ?>"><i class="fab fa-twitter-square"></i></a>
+                                <a href="<?php echo $instagram ?>"><i class="fa fa-instagram"></i></a>
                             </div>
                         </a>
                     </div>
                 </div>
-                <div class="col-lg-12 col-md-12">
-                    <div class="image-one item">
-                        <a href="#team">
-                            <img src="images/p2.jpg" class="arrow-png img-responsive lazyOwl">
-                            <h4>Enrique Lal</h4>
-                            <div class="buttons-teams2 mt-2">
-                                <a href="#team"><i class="fab fa-facebook-square"></i></a>
-                                <a href="#team"><i class="fab fa-twitter-square"></i></a>
-                                <a href="#team"><i class="fab fa-google-plus-square"></i></a>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-12 col-md-12">
-                    <div class="image-one item">
-                        <a href="#team">
-                            <img src="images/p3.jpg" class="arrow-png img-responsive lazyOwl">
-                            <h4>Smith Ker</h4>
-                            <div class="buttons-teams2 mt-2">
-                                <a href="#team"><i class="fab fa-facebook-square"></i></a>
-                                <a href="#team"><i class="fab fa-twitter-square"></i></a>
-                                <a href="#team"><i class="fab fa-google-plus-square"></i></a>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-12 col-md-12 ">
-                    <div class="image-one item">
-                        <a href="#team">
-                            <img src="images/p4.jpg" class="arrow-png img-responsive lazyOwl">
-                            <h4>Forkler Lee</h4>
-                            <div class="buttons-teams2 mt-2">
-                                <a href="#team"><i class="fab fa-facebook-square"></i></a>
-                                <a href="#team"><i class="fab fa-twitter-square"></i></a>
-                                <a href="#team"><i class="fab fa-google-plus-square"></i></a>
-                            </div>
-                        </a>
-                    </div>
-                </div>
+
+            <?php }
+
+        } ?>
+
+
             </div>
         </div>
     </section>

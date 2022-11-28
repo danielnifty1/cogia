@@ -7,4 +7,4 @@ RewriteRule ^(.*)$ https://thecathaybusinessgroup.com/$1 [R,L]
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteRule ^([^\.]+)$ $1.php/ [NC,L]
 
-ErrorDocument 404 http://localhost/cogia/not-found
+#ErrorDocument 404 http://localhost/cogia/not-found

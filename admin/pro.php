@@ -21,7 +21,7 @@ if(isset($_POST['pid'])){
 $pid=$_POST['pid'];
 
 $valid_extensions = array('jpeg', 'jpg', 'png', 'gif', 'bmp' , 'pdf' , 'doc' , 'ppt'); // valid extensions
-$path = 'events/'; // upload directory
+$path = 'pastors/'; // upload directory
 if(!empty($_POST['pid']) || $_FILES['image']){
 $img = $_FILES['image']['name'];
 $tmp = $_FILES['image']['tmp_name'];
@@ -37,12 +37,12 @@ if(move_uploaded_file($tmp,$path))
 {
 
 
-$checker="SELECT* FROM events where eventid ='$pid'";
+$checker="SELECT* FROM pastors where pid ='$pid'";
 $chrst=mysqli_query($conn,$checker);
 $chrtn=mysqli_num_rows($chrst);
 if($chrtn){
 
-	$gal= "UPDATE events set img='$path' where `eventid`='".$pid."'";
+	$gal= "UPDATE pastors set img='$path' where `pid`='".$pid."'";
 
 	
 $resultgal=mysqli_query($conn,$gal);
@@ -50,7 +50,7 @@ $resultgal=mysqli_query($conn,$gal);
 
 
 }else{
-$gal= "INSERT INTO events (eventid,img) values('$pid','$path')";
+$gal= "INSERT INTO pastors (pid,img) values('$pid','$path')";
 $resultgal=mysqli_query($conn,$gal);
 
 
@@ -67,7 +67,7 @@ debtn.style.display="block";
 
   </script>';
 
-	$getupl="SELECT* from events where eventid='$pid' ";
+	$getupl="SELECT* from pastors where pid='$pid' ";
 	$resu=mysqli_query($conn,$getupl);
 	$myrtn=mysqli_num_rows($resu);
 	if($myrtn){
@@ -104,3 +104,17 @@ echo 'invalid';
 }
 
 
+
+if(isset($_POST['viewid'])){
+
+
+// echo '<script>alert("ssnoo") </script>';
+
+
+$viewid=$_POST['viewid'];
+
+$upda="UPDATE pastors set status =1 where id='".$viewid."'";
+$rst=mysqli_query($conn,$upda);
+
+
+}

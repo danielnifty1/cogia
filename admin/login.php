@@ -2,11 +2,12 @@
 <head>
 	
 <!-- Custom CSS -->
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <title>COGIA ADMIN</title>
 <link href="css/style.css" rel='stylesheet' type='text/css' />
 <link href="../animate.css" rel='stylesheet' type='text/css' />
 <script src="js/custom.js"></script>
 <link href="css/custom.css" rel="stylesheet">
- <title>United Offshore Express Courier</title>
 </head>
 
 <div id="page-wrapper" class="wow tada">

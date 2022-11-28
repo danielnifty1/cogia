@@ -37,6 +37,8 @@
                     </a>
                    
                 </li>
+
+                
                 
                   <li class="sub-menu">
                     <a href="approved_test">
@@ -71,6 +73,30 @@
                    
                 </li>
 
+                <li class="sub-menu">
+                    <a href="addphoto">
+                        <i class="fa fa-image"></i>
+                        <span>Add Photos</span>
+                    </a>
+                   
+                </li>
+
+                <li class="sub-menu">
+                    <a href="photos">
+                        <i class="fa fa-eye"></i>
+                        <span>View Photo</span>
+                    </a>
+                   
+                </li>
+
+                <li class="sub-menu">
+                    <a href="new_download.php">
+                        <i class="fa fa-plus"></i>
+                        <span>Add Downloads</span>
+                    </a>
+                   
+                </li>
+
                  <li class="sub-menu">
                     <a href="offerrings">
                         <i class="fa fa-moneys">$</i>
@@ -88,21 +114,21 @@
                     
                 </li>
                 <li class="sub-menu">
-                    <a href="viewadmins">
+                    <a href="viewpastors">
                         <i class=" fa fa-users"></i>
-                        <span>VIEW ADMINS</span>
+                        <span>Pastors</span>
                     </a>
                     
                 </li>
-                 <h6 style="padding: 9px 9px; background-color: #2a3f54; color: white; font-weight: bold;">INBOX </h6> 
+                 <!-- <h6 style="padding: 9px 9px; background-color: #2a3f54; color: white; font-weight: bold;">INBOX </h6>  -->
 
-                <li class="sub-menu">
+                <!-- <li class="sub-menu">
                     <a href="inbox">
                         <i class=" fa fa-envelope"></i>
                         <span>MESSAGES</span>
                     </a>
                     
-                </li>
+                </li> -->
                  <h6 style="padding: 9px 9px; background-color: #2a3f54; color: white; font-weight: bold;">LOGOUT </h6> 
 
               

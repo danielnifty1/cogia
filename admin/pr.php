@@ -12,6 +12,36 @@ require "../connection.php";
              echo'<script>location.replace("login")</script>';
         }
 
+
+// deleting photo from gallary
+
+        if(isset($_POST['photodelid'])){
+
+	 $photodelid = isset($_POST['photodelid']) ? trim($_POST['photodelid']) : '';
+	// $adminpassword = isset($_POST['adminpassword']) ? trim($_POST['adminpassword']) : '';
+
+
+	 $current = "UPDATE photo_gallary set status=3 where id='".$photodelid."'";
+
+		$currentrtn=mysqli_query($conn,$current);
+
+}
+
+// deleting file from downloads 
+
+        if(isset($_POST['filedel'])){
+
+	 $filedel = isset($_POST['filedel']) ? trim($_POST['filedel']) : '';
+	// $adminpassword = isset($_POST['adminpassword']) ? trim($_POST['adminpassword']) : '';
+
+
+	 $current = "UPDATE downloads set status=0 where id='".$filedel."'";
+
+		$currentrtn=mysqli_query($conn,$current);
+
+}
+
+
 if(isset($_POST['adminname'])){
 
 	 $adminname = isset($_POST['adminname']) ? trim($_POST['adminname']) : '';

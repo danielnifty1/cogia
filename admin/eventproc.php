@@ -318,14 +318,76 @@ if($rtn){ ?>
 <?php }
 
 
-
-
-
-
-
-
-
-
-
  }
+
+
+ // adding pastors
+
+ if(isset($_POST['pastorname'])){
+ 
+ $pid=$_POST['pid'];
+ $pastorname=$_POST['pastorname'];
+ $postheld=$_POST['postheld'];
+ $fb=$_POST['fb'];
+ $instagram=$_POST['instagram'];
+ $twitter=$_POST['twitter'];
+
+  $pastorname = base64_encode($pastorname);
+ $check="SELECT* FROM pastors where name ='$pastorname' and status=0 ";
+ $result=mysqli_query($conn,$check);
+ $retn=mysqli_num_rows($result);
+ if($retn){
+ 	echo'<script>
+		  msgtext.innerHTML="Pastors already added ";
+		   msgtext.style.color="red";
+		  </script>'; 
+
+		}else{
+
+
+			$add="UPDATE pastors set name='$pastorname',position='$postheld',fb='$fb',twitter='$twitter',instagram='$instagram' where pid='".$pid."'";
+
+			$rst=mysqli_query($conn,$add);
+
+
+				echo'<script>
+		  msgtext.innerHTML="Added Successfully";
+		   msgtext.style.color="Green";
+		  </script>'; 
+		}
+
+
+
+}
+
+
+ // Updating pastors
+
+ if(isset($_POST['updatepastorname'])){
+  
+ $pid=$_POST['updatepid'];
+ $pastorname=$_POST['updatepastorname'];
+ $postheld=$_POST['updatepostheld'];
+ $fb=$_POST['updatefb'];
+ $instagram=$_POST['updateinstagram'];
+ $twitter=$_POST['updatetwitter'];
+ $updatephone=$_POST['updatephone'];
+ $updatemail=$_POST['updatemail'];
+
+
+  $pastorname = base64_encode($pastorname);
+ 	$add="UPDATE pastors set name='$pastorname',position='$postheld',fb='$fb',twitter='$twitter',instagram='$instagram',phone='$updatephone',email='$updatemail' where id='".$pid."'";
+
+ 	$rst=mysqli_query($conn,$add);
+
+if($rst){
+	echo'<script>
+		  msgtext.innerHTML="UPDATED Successfully";
+		   msgtext.style.color="Green";
+		  </script>';
+		}else{
+			echo mysqli_error($conn);
+		}
+				
+}
 ?>

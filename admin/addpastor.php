@@ -155,38 +155,41 @@ $ref="MDT".$autoPin3."F".$autoPin2."D";
                             <input required onkeypress="addnumber1()"   id="pid" name="pid" value="<?php echo $ref ?>"      type="hidden" class="form-control"  placeholder="First Name"  >
                    			<div class="input-group">
                             <span class="input-group-addon" style="font-weight:bold">
-                              <span class="fa fa-udser">Program Title</span>
+                              <span class="fa fa-udser">Name</span>
                             </span>
-                            <input required onkeypress="addnumber1()"   id="title" name="title"     type="" class="form-control"  placeholder="First Name"  >
+                            <input required onkeypress="addnumber1()"   id="pastorname" name="pastorname"     type="" class="form-control"  placeholder="Full Name"  >
                         	</div>
                           <br>
 
                           <div class="input-group">
                             <span class="input-group-addon" style="font-weight:bold">
-                              <span class="fa fa-udser">Date</span>
+                              <span class="fa fa-udser">Post Held</span>
                             </span>
-                            <input required onkeypress="addnumber1()"   id="date" name="date"     type="" class="form-control"  placeholder="Last Name"  >
+                            <input required onkeypress="addnumber1()"   id="postheld" name="postheld"     type="" class="form-control"  placeholder="Post"  >
                         </div>
                           <br>
 
                           <div class="input-group">
                             <span class="input-group-addon" style="font-weight:bold">
-                              <span class="fa fa-udser">Time</span>
+                              <span class="fa fa-facebook" style="color:blue"></span>
                             </span>
-                            <input required onkeypress="addnumber1()"   id="ptime" name="ptime"     type="" class="form-control"  placeholder="Middle Name"  >
+                            <input  onkeypress="addnumber1()"   id="fb" name="fb"     type="" class="form-control"  placeholder="Middle Name"  >
                         </div>
                           <br>
-
-                        <div class="input-group">
+                          <div class="input-group">
                             <span class="input-group-addon" style="font-weight:bold">
-                              <span class="fa fa-udser">Message</span>
+                              <span class="fa fa-instagram" style="color:pink;"></span>
                             </span>
-                            <textarea required   onkeypress="addnumber1()" name="txt" class="form-control"  placeholder="Username">
-                            	
-                            </textarea>
-                            
+                            <input  onkeypress="addnumber1()"   id="fb" name="instagram"     type="" class="form-control"  placeholder="Middle Name"  >
                         </div>
+ 
                           <br>
+                            <div class="input-group">
+                            <span class="input-group-addon" style="font-weight:bold">
+                              <span class="fa fa-twitter" style="color:blue;"></span>
+                            </span>
+                            <input  onkeypress="addnumber1()"   id="twitter" name="twitter"     type="" class="form-control"  placeholder="Middle Name"  >
+                        </div>
 
                           <center>
                         <div class="input-group" style="display:none" id="debtn">

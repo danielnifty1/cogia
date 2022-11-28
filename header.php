@@ -34,8 +34,16 @@
                             <a class="nav-link" href="giving">Givings</a>
                         </li>
 
-                         <li class="nav-item">
-                            <a class="nav-link" href="#">Media</a>
+                         <li class="nav-item dropdown">
+                            
+
+                            <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" href="#">Media </a>
+
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown" style="background:white; color:black" >
+                                <li><a class="dropdown-item" href="photo_gallary" style="color:black">Photo Gallary</a></li>
+                           
+                                <li><a class="dropdown-item" href="download" style="color:black">Downloads</a></li>
+                            </ul>
                         </li>
                          <li class="nav-item">
                             <a class="nav-link btn btn-warning btn-lg text-center p-1" href="live"> Live Stream<span style="color:red" class="fa fa-play-circle-o  "></span></a>

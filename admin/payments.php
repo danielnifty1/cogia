@@ -213,13 +213,18 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 								</table>
 							</div>
 						</div>	
-						<div class="col-md-12 col-md-push-6 ">
+						 
+
+		</div>
+
+		<div class="row">
+			<div class="col-md-12 col-md-push-6 ">
 				<?php 
 
 				for ($page=1; $page <=$number_of_pages ; $page++) { 
-						echo ' <a class="btn-sm btn-info btn" href="adview.php?page='.$page.'">'.$page.'</a> ';
+						echo ' <a class="btn-sm btn-info btn" href="payments?page='.$page.'">'.$page.'</a> ';
 					} ?>
-				</div>;
+				</div>
 
 		</div>
 	

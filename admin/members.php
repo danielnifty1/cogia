@@ -105,7 +105,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			<br>
 
 			<h4 style="text-align: center;">All Registered Member (<?php echo $tmember ?>)</h4>		
-			<div class="col-md-12 col-lg-12 col-sm-12 col-xs-12 col-md-push-0">
+			<div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
 				<div class="table-responsive">
 				<style type="text/css">
 					th,td{
@@ -166,9 +166,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
 				 $("#delview<?php echo $id ?>").click(function(){
 
-				 	 var viewid = $("#viewid<?php echo $id ?> " ).val();
+				 	 var viewid ="<?php echo $id ?>";
 				 	
-				 		var retval =confirm("do u want to delete <?php echo $recname ?> package");
+				 		var retval =confirm("do u want to delete <?php echo $fname." ".$onames ?> from member list");
 
 				 		if(retval==true){
 				  
@@ -211,15 +211,20 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 								</table>
 							</div>
 			</div>	
-						<div class="col-md-12 col-md-push-6 ">
+			 
+
+			</div>
+
+			<div class="row">
+			<div class="col-md-12 col-md-push-6 ">
 				<?php 
 
 				for ($page=1; $page <=$number_of_pages ; $page++) { 
-						echo ' <a class="btn-sm btn-info btn" href="adview.php?page='.$page.'">'.$page.'</a> ';
+						echo ' <a class="btn-sm btn-info btn" href="members?page='.$page.'">'.$page.'</a> ';
 					} ?>
-				</div>;
+				</div>
 
-			</div>
+		</div>
 	
 
 			

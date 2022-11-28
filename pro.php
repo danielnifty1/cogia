@@ -1,6 +1,6 @@
 <?php
 require "connection.php";
-
+  echo'<script>alert("login")</script>';
 
 if(isset($_POST['firstName'])){
 	 
